@@ -20,7 +20,7 @@ namespace FiltersSample
         public void ConfigureServices(IServiceCollection services)
         {
             // Add service filters.
-            services.AddScoped<AddHeaderResultServiceFilter>();
+            //services.AddScoped<AddHeaderResultServiceFilter>();
             services.AddScoped<SampleActionFilterAttribute>();
 
             services.AddMvc(options =>
@@ -48,6 +48,9 @@ namespace FiltersSample
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+
+            app.UseMiddleware<AddHeaderMiddleware>();
 
             app.UseMvc(routes =>
             {

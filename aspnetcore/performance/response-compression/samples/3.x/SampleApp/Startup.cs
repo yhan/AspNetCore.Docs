@@ -17,8 +17,8 @@ namespace ResponseCompressionSample
         {
             services.AddResponseCompression(options =>
             {
-                options.Providers.Add<BrotliCompressionProvider>();
-                options.Providers.Add<GzipCompressionProvider>();
+                //options.Providers.Add<BrotliCompressionProvider>();
+                //options.Providers.Add<GzipCompressionProvider>();
                 options.Providers.Add<CustomCompressionProvider>();
                 options.MimeTypes = 
                     ResponseCompressionDefaults.MimeTypes.Concat(
